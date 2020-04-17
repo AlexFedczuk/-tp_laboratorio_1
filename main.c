@@ -31,13 +31,13 @@ int main()
             printf("\tb) Calcular la resta (A-B)\n");
             printf("\tc) Calcular la division (A/B)\n");
             printf("\td) Calcular la multiplicacion (A*B)\n");
-            printf("\te) Calcular el factorial (A!)\n");
+            printf("\te) Calcular el factorial (A!) y (B!)\n");
         printf("4. Informar resultados\n");
-            printf("\ta) El resultado de A+B es: r\n");
+            /*printf("\ta) El resultado de A+B es: r\n");
             printf("\tb) El resultado de A-B es: r\n");
             printf("\tc) El resultado de A/B es: r o No es posible dividir por cero\n");
             printf("\td) El resultado de A*B es: r \n");
-            printf("\te) El factorial de A es: r1 y El factorial de B es: r2\n");
+            printf("\te) El factorial de A es: r1 y El factorial de B es: r2\n");*/
         printf("5. Salir\n");
 
         opcion=ingresarOpcion(opcion,"Elija una opcion: ");
@@ -89,7 +89,7 @@ int main()
     }
     while(opcion!=5);
     return 0;
-}//Ahora en lo que estoy trabajando es en que se deban seguir los pasos a seguir del Menu!
+}//Ahora en lo que estoy trabajando es, como hago para que el simbolo de "x" y el de "y", sean representados por un valor numerico en el menu.
 
 
 
