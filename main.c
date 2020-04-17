@@ -11,18 +11,16 @@ int main()
     resultado=dividir(primerNum,segundoNum);
 
     printf("%f",resultado);*/
-    int primerOperador;
-    int segundoOperador;
-    int resultadoSuma;
-    int resultadoResta;
-    float resultadoDivision;
-    int resultadoMultiplicacion;
-    int resultadoFactorizadoX;
-    int resultadoFactorizadoY;
+    int primerOperando;
+    int segundoOperando;
     int opcion;
-    int contador;
+    int banderaCase1;
+    int banderaCase2;
+    int banderaCase3;
 
-    contador=0;
+    banderaCase1=0;
+    banderaCase2=0;
+    banderaCase3=0;
 
     do
     {
@@ -48,22 +46,38 @@ int main()
         {
             case 1:
 
-                primerOperador=pedidorNumero(primerOperador,"\nIngrese el 1er operando: ");
+                primerOperando=pedidorNumero(primerOperando,"\nIngrese el 1er operando: ");
+                banderaCase1++;
                 break;
 
             case 2:
 
-                segundoOperador=pedidorNumero(segundoOperador,"\nIngrese el 2do operando: ");
+                segundoOperando=pedidorNumero(segundoOperando,"\nIngrese el 2do operando: ");
+                banderaCase2++;
                 break;
 
             case 3:
-
-                realizarOpMat(primerOperador,segundoOperador);
+                if(banderaCase1!=0 && banderaCase2!=0)
+                {
+                    realizarOpMat(primerOperando,segundoOperando);
+                    banderaCase1--;
+                    banderaCase2--;
+                    banderaCase3++;
+                }else
+                {
+                    printf("Error, debe ingresar un valor para cada operando!\t");
+                }
                 break;
 
             case 4:
-
-                mostrarResultados(primerOperador,segundoOperador);
+                if(banderaCase3!=0)
+                {
+                    mostrarResultados(primerOperando,segundoOperando);
+                    banderaCase3--;
+                }else
+                {
+                    printf("Error, debe ingresar un valor para cada operando y calcularlos!\t");
+                }
                 break;
 
             default:
@@ -75,7 +89,7 @@ int main()
     }
     while(opcion!=5);
     return 0;
-}
+}//Ahora en lo que estoy trabajando es en que se deban seguir los pasos a seguir del Menu!
 
 
 
