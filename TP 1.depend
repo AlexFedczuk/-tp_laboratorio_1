@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1587091627 source:c:\users\pc\videos\captures\desktop\tps de prolab 1\tp 1\funcionesdeltp.c
+	"funcionesDelTP.h"
+
+1587091148 c:\users\pc\videos\captures\desktop\tps de prolab 1\tp 1\funcionesdeltp.h
+
+1587092290 source:c:\users\pc\videos\captures\desktop\tps de prolab 1\tp 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesDelTP.h"
+
