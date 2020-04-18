@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "funcionesDelTP.h"
 #include "operacionesMatematicas.h"
 
 int main()
@@ -56,14 +53,20 @@ int main()
             case 1:
 
                 primerOperando=pedidorNumero(primerOperando,"\nIngrese el 1er operando: ");
-                banderaCase1++;
+                if(banderaCase1==0)
+                {
+                    banderaCase1=1;
+                }
                 bandera1Menu++;
                 break;
 
             case 2:
 
                 segundoOperando=pedidorNumero(segundoOperando,"\nIngrese el 2do operando: ");
-                banderaCase2++;
+                if(banderaCase2==0)
+                {
+                    banderaCase2=1;
+                }
                 bandera2Menu++;
                 break;
 
@@ -76,7 +79,16 @@ int main()
                     multiplicacion=multiplicar(primerOperando,segundoOperando);
                     factoreoA=factorizar(primerOperando);
                     factoreoB=factorizar(segundoOperando);
-                    banderaCase3++;
+                    if(banderaCase3==0)
+                    {
+                        banderaCase3=1;
+                    }else
+                    {
+                        if(banderaCase3==1)
+                        {
+                            banderaCase3=0;
+                        }
+                    }
                 }else
                 {
                     if(banderaCase1==0 && banderaCase2==0)
