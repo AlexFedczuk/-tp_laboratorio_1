@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "funcionesDelTP.h"
 
-void mostarMensaje();
-
 int main()
 {
     int primerOperando;
@@ -130,29 +128,7 @@ int main()
     }
     while(opcion!=5);
     return 0;
-}//Ahora en lo que estoy trabajando es, como hago para que el simbolo de "x" y el de "y", sean representados por un valor numerico en el menu.
-
-/* int primerNum=2;
-    int segundoNum=6;
-    float resultado;
-
-    resultado=dividir(primerNum,segundoNum);
-
-    printf("%f",resultado);*/
-
-/*void mostarMensaje()
-{
-
-    int variableEntera;
-
-    printf("1. Ingresar 1er operando (A=x)\n");
-
-    printf("Ingresar un numero para remplazar en el equivalente de A: ");
-    scanf("%d",&variableEntera);
-
-    printf("1. Ingresar 1er operando (A=%d)\n",variableEntera);
-}*/
-
+}
 
 
 

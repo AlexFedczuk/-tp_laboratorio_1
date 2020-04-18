@@ -9,13 +9,16 @@
 	<stdlib.h>
 	"funcionesDelTP.h"
 
-1587179641 source:c:\users\pc\desktop\-tp_laboratorio_1\funcionesdeltp.c
+1587219222 source:c:\users\pc\desktop\-tp_laboratorio_1\funcionesdeltp.c
 	"funcionesDelTP.h"
 
-1587173329 c:\users\pc\desktop\-tp_laboratorio_1\funcionesdeltp.h
+1587216356 c:\users\pc\desktop\-tp_laboratorio_1\funcionesdeltp.h
 
-1587184438 source:c:\users\pc\desktop\-tp_laboratorio_1\main.c
+1587216356 source:c:\users\pc\desktop\-tp_laboratorio_1\main.c
 	<stdio.h>
 	<stdlib.h>
+	"funcionesDelTP.h"
+
+1587219222 source:c:\users\pc\desktop\-tp_laboratorio_1\operacionesmatematicas.c
 	"funcionesDelTP.h"
 
