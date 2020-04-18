@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funcionesDelTP.h"
+#include "operacionesMatematicas.h"
+
+void mostarResultadosMK2(int primerOperando,int segundoOperando,int suma,int resta,float division,int multiplicacion,int factoreoA,int factoreoB);
 
 int main()
 {
@@ -12,6 +15,13 @@ int main()
     int banderaCase3;
     int bandera1Menu;
     int bandera2Menu;
+    //Nuevas variables
+    int suma;
+    int resta;
+    float division;
+    int multiplicacion;
+    int factoreoA;
+    int factoreoB;
 
     banderaCase1=0;
     banderaCase2=0;
@@ -63,7 +73,19 @@ int main()
             case 3:
                 if(banderaCase1!=0 && banderaCase2!=0)
                 {
-                    realizarOpMat(primerOperando,segundoOperando);
+                    //realizarOpMat(primerOperando,segundoOperando);
+                    suma=sumar(primerOperando,segundoOperando);
+                    resta=restar(primerOperando,segundoOperando);
+                    division=dividir(primerOperando,segundoOperando);
+                    multiplicacion=multiplicar(primerOperando,segundoOperando);
+                    factoreoA=factorizar(primerOperando);
+                    factoreoB=factorizar(segundoOperando);
+                    /*sumar(primerOperando,segundoOperando);
+                    restar(primerOperando,segundoOperando);
+                    dividir(primerOperando,segundoOperando);
+                    multiplicar(primerOperando,segundoOperando);
+                    factorizar(primerOperando);
+                    factorizar(segundoOperando);*/
                     banderaCase3++;
                 }else
                 {
@@ -90,7 +112,8 @@ int main()
             case 4:
                 if(banderaCase1!=0 && banderaCase2!=0 && banderaCase3!=0)
                 {
-                    mostrarResultados(primerOperando,segundoOperando);
+                    //mostrarResultados(primerOperando,segundoOperando);
+                    mostarResultadosMK2(primerOperando,segundoOperando,suma,resta,division,multiplicacion,factoreoA,factoreoB);
                     banderaCase3--;
                 }else
                 {
@@ -130,5 +153,59 @@ int main()
     return 0;
 }
 
+void mostarResultadosMK2(int primerOperando,int segundoOperando,int suma,int resta,float division,int multiplicacion,int factoreoA,int factoreoB)
+{
+    /*int suma;
+    int resta;
+    float division;
+    int multiplicacion;
+    int factoreoA;
+    int factoreoB;*/
+
+    suma=sumar(primerOperando,segundoOperando);
+    printf("a) El resultado de %d+%d es: %d\n",primerOperando,segundoOperando,suma);
+
+    resta=restar(primerOperando,segundoOperando);
+    printf("b) El resultado de %d-%d es: %d\n",primerOperando,segundoOperando,resta);
+
+    division=dividir(primerOperando,segundoOperando);
+    if(segundoOperando==0)
+    {
+        printf("c) No es posible dividir por cero\n");
+    }else
+    {
+        printf("c) El resultado de %d/%d es: %f\n",primerOperando,segundoOperando,division);
+    }
+
+    multiplicacion=multiplicar(primerOperando,segundoOperando);
+    printf("d) El resultado de %d*%d es: %d \n",primerOperando,segundoOperando,multiplicacion);
+
+    factoreoA=factorizar(primerOperando);
+    factoreoB=factorizar(segundoOperando);
+    if(primerOperando<13 && segundoOperando<13)
+    {
+        printf("e) El factorial de %d es: %d y El factorial de %d es: %d\n",primerOperando,factoreoA,segundoOperando,factoreoB);
+    }else
+    {
+        if(primerOperando>12 && segundoOperando<13)
+        {
+            printf("e) Esta calculadora no esta preparada para factorear numeros mayores a 12. El factorial de %d es: %d\n",segundoOperando,factoreoB);
+        }else
+        {
+            if(primerOperando<13 && segundoOperando>12)
+            {
+                printf("e) El factorial de %d es: %d .Esta calculadora no esta preparada para factorear numeros mayores a 12\n",primerOperando,factoreoA);
+            }else
+            {
+                if(primerOperando>12 && segundoOperando>12)
+                {
+                    printf("e) Esta calculadora no esta preparada para factorear numeros mayores a 12\n");
+                }
+            }
+        }
+    }
+
+
+}//Recien termine de cambiar los operandos...
 
 

@@ -1,4 +1,5 @@
-#include "funcionesDelTP.h"
+#include "operacionesMatematicas.h"
+
 
 /** \brief Pedir dos numeros int y sumarlos.
  *
@@ -70,20 +71,18 @@ int multiplicar(int x,int y)
  * \return El resultado de la factorizacion.
  *
  */
-int factorizar(int variable)
+
+int factorizar(int operando)
 {
-    int i;
-    int fact;
+    unsigned int resultado;
 
-    i=1;
-    fact=1;
-
-     for(i;i<=variable;i++)
-     {
-         fact=fact*i;
-     }
-
-     return fact;
+    if(operando== 0)
+    {
+        resultado = 1;
+    }else{
+        resultado=operando*factorizar(operando-1);
+    }
+    return resultado;
 }
 
 /** \brief Calcualr las operaciones matematicas de la calculadora.
@@ -95,14 +94,14 @@ int factorizar(int variable)
  */
 void realizarOpMat(int x,int y)
 {
-    int resultadoSuma;
+    /*int resultadoSuma;
     int resultadoResta;
     float resultadoDivision;
     int resultadoMultiplicacion;
     int resultadoFactorizadoX;
-    int resultadoFactorizadoY;
+    int resultadoFactorizadoY;*/
 
-    resultadoSuma=sumar(x,y);
+    /*resultadoSuma=sumar(x,y);
 
     resultadoResta=restar(x,y);
 
@@ -112,7 +111,14 @@ void realizarOpMat(int x,int y)
 
     resultadoFactorizadoX=factorizar(x);
 
-    resultadoFactorizadoY=factorizar(y);
+    resultadoFactorizadoY=factorizar(y);*/
+
+    sumar(x,y);
+    restar(x,y);
+    dividir(x,y);
+    multiplicar(x,y);
+    factorizar(x);
+    factorizar(y);
 }
 
 /** \brief Calcular y mostrar los resultados de las operaciones matematicas.
@@ -122,7 +128,10 @@ void realizarOpMat(int x,int y)
  * \return Nada.
  *
  */
-void mostrarResultados(int x,int y)
+
+
+
+/*void mostrarResultados(int x,int y)
 {
     int resultadoSuma;
     int resultadoResta;
@@ -174,4 +183,4 @@ void mostrarResultados(int x,int y)
         }
     }
 
-}
+}*/

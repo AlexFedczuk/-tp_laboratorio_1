@@ -1,7 +1,5 @@
 #include "funcionesDelTP.h"
 
-
-
 /** \brief Pedir un numero int dentro de un conjunto acompanado de un string.
  *
  * \param Recive un int.
@@ -30,13 +28,6 @@ int ingresarOpcion (int operando,char mensaje[])
     while(bandera != 0);
     return operando;
 }
-
-
-
-
-
-
-
 
 /** \brief Pedir un numero int acompanado de un string.
  *
