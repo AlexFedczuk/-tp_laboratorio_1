@@ -1,6 +1,5 @@
 #include "operacionesMatematicas.h"
 
-
 /** \brief Pedir dos numeros int y sumarlos.
  *
  * \param Pide un int.
@@ -71,7 +70,6 @@ int multiplicar(int x,int y)
  * \return El resultado de la factorizacion.
  *
  */
-
 int factorizar(int operando)
 {
     unsigned int resultado;
@@ -94,25 +92,6 @@ int factorizar(int operando)
  */
 void realizarOpMat(int x,int y)
 {
-    /*int resultadoSuma;
-    int resultadoResta;
-    float resultadoDivision;
-    int resultadoMultiplicacion;
-    int resultadoFactorizadoX;
-    int resultadoFactorizadoY;*/
-
-    /*resultadoSuma=sumar(x,y);
-
-    resultadoResta=restar(x,y);
-
-    resultadoDivision=dividir(x,y);
-
-    resultadoMultiplicacion=multiplicar(x,y);
-
-    resultadoFactorizadoX=factorizar(x);
-
-    resultadoFactorizadoY=factorizar(y);*/
-
     sumar(x,y);
     restar(x,y);
     dividir(x,y);
@@ -128,54 +107,44 @@ void realizarOpMat(int x,int y)
  * \return Nada.
  *
  */
-
-
-
-/*void mostrarResultados(int x,int y)
+void mostarResultadosMK2(int primerOperando,int segundoOperando,int suma,int resta,float division,int multiplicacion,int factoreoA,int factoreoB)
 {
-    int resultadoSuma;
-    int resultadoResta;
-    float resultadoDivision;
-    int resultadoMultiplicacion;
-    int resultadoFactorizadoX;
-    int resultadoFactorizadoY;
+    suma=sumar(primerOperando,segundoOperando);
+    printf("a) El resultado de %d+%d es: %d\n",primerOperando,segundoOperando,suma);
 
-    resultadoSuma=sumar(x,y);
-    printf("a) El resultado de %d+%d es: %d\n",x,y,resultadoSuma);
+    resta=restar(primerOperando,segundoOperando);
+    printf("b) El resultado de %d-%d es: %d\n",primerOperando,segundoOperando,resta);
 
-    resultadoResta=restar(x,y);
-    printf("b) El resultado de %d-%d es: %d\n",x,y,resultadoResta);
-
-    resultadoDivision=dividir(x,y);
-    if(y==0)
+    division=dividir(primerOperando,segundoOperando);
+    if(segundoOperando==0)
     {
         printf("c) No es posible dividir por cero\n");
     }else
     {
-        printf("c) El resultado de %d/%d es: %f\n",x,y,resultadoDivision);
+        printf("c) El resultado de %d/%d es: %f\n",primerOperando,segundoOperando,division);
     }
 
-    resultadoMultiplicacion=multiplicar(x,y);
-    printf("d) El resultado de %d*%d es: %d \n",x,y,resultadoMultiplicacion);
+    multiplicacion=multiplicar(primerOperando,segundoOperando);
+    printf("d) El resultado de %d*%d es: %d \n",primerOperando,segundoOperando,multiplicacion);
 
-    resultadoFactorizadoX=factorizar(x);
-    resultadoFactorizadoY=factorizar(y);
-    if(x<13 && y<13)
+    factoreoA=factorizar(primerOperando);
+    factoreoB=factorizar(segundoOperando);
+    if(primerOperando<13 && segundoOperando<13)
     {
-        printf("e) El factorial de %d es: %d y El factorial de %d es: %d\n",x,resultadoFactorizadoX,y,resultadoFactorizadoY);
+        printf("e) El factorial de %d es: %d y El factorial de %d es: %d\n",primerOperando,factoreoA,segundoOperando,factoreoB);
     }else
     {
-        if(x>12 && y<13)
+        if(primerOperando>12 && segundoOperando<13)
         {
-            printf("e) Esta calculadora no esta preparada para factorear numeros mayores a 12. El factorial de %d es: %d\n",y,resultadoFactorizadoY);
+            printf("e) Esta calculadora no esta preparada para factorear numeros mayores a 12. El factorial de %d es: %d\n",segundoOperando,factoreoB);
         }else
         {
-            if(x<13 && y>12)
+            if(primerOperando<13 && segundoOperando>12)
             {
-                printf("e) El factorial de %d es: %d .Esta calculadora no esta preparada para factorear numeros mayores a 12\n",x,resultadoFactorizadoX);
+                printf("e) El factorial de %d es: %d .Esta calculadora no esta preparada para factorear numeros mayores a 12\n",primerOperando,factoreoA);
             }else
             {
-                if(x>12 && y>12)
+                if(primerOperando>12 && segundoOperando>12)
                 {
                     printf("e) Esta calculadora no esta preparada para factorear numeros mayores a 12\n");
                 }
@@ -183,4 +152,5 @@ void realizarOpMat(int x,int y)
         }
     }
 
-}*/
+
+}

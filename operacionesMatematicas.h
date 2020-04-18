@@ -14,4 +14,4 @@ int factorizar(int variable);
 
 void realizarOpMat(int x,int y);
 
-//void mostrarResultados(int x,int y);
+void mostarResultadosMK2(int primerOperando,int segundoOperando,int suma,int resta,float division,int multiplicacion,int factoreoA,int factoreoB);
