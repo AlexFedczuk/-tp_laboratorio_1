@@ -44,5 +44,40 @@ int pedidorNumero(int numero,char mensaje[])
     return numero;
 }
 
+/** \brief Preguntar al usuario si desea continuar o no.
+ *
+ * \return Un numero int.
+ *
+ */
+int salirPrograma()
+{
+    char opcionElegida;
+    int bandera;
+
+    do
+    {
+        printf("\nDesea salir? Si(s) o No(n): ");
+        fflush(stdin);
+        scanf("%c",&opcionElegida);
+        if(opcionElegida=='s')
+        {
+            bandera=0;
+        }else
+        {
+            if(opcionElegida=='n')
+            {
+                bandera=-1;
+            }else
+            {
+                printf("Error! Opcion invalida.");
+            }
+        }
+    }
+    while(opcionElegida!='s' && opcionElegida!='n');
+
+
+    return bandera;
+}
+
 
 

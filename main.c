@@ -23,7 +23,6 @@ int main()
     bandera1Menu=0;
     bandera2Menu=0;
 
-
     do
     {
 
@@ -114,8 +113,13 @@ int main()
             case 4:
                 if(banderaCase1!=0 && banderaCase2!=0 && banderaCase3!=0)
                 {
-                    mostarResultadosMK2(primerOperando,segundoOperando,suma,resta,division,multiplicacion,factoreoA,factoreoB);
-                    banderaCase3--;
+
+                    do
+                    {
+                        mostarResultadosMK2(primerOperando,segundoOperando,suma,resta,division,multiplicacion,factoreoA,factoreoB);
+                        banderaCase3=salirPrograma();
+                    }
+                    while(banderaCase3!=0);
                 }else
                 {
                     if(banderaCase1==0 && banderaCase2==0 && banderaCase3==0)
@@ -140,6 +144,7 @@ int main()
                             }
                         }
                     }
+
                 }
                 break;
 
@@ -153,6 +158,8 @@ int main()
     while(opcion!=5);
     return 0;
 }
+
+
 
 
 

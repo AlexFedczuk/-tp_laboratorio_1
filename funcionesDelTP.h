@@ -5,4 +5,6 @@ int ingresarOpcion(int operando,char mensaje[]);
 
 int pedidorNumero(int numero,char mensaje[]);
 
+int salirPrograma();
+
 
