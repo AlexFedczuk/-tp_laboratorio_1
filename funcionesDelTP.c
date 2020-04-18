@@ -195,5 +195,27 @@ void mostrarResultados(int x,int y)
 
     resultadoFactorizadoX=factorizar(x);
     resultadoFactorizadoY=factorizar(y);
-    printf("e) El factorial de %d es: %d y El factorial de %d es: %d\n",x,resultadoFactorizadoX,y,resultadoFactorizadoY);
+    if(x<13 && y<13)
+    {
+        printf("e) El factorial de %d es: %d y El factorial de %d es: %d\n",x,resultadoFactorizadoX,y,resultadoFactorizadoY);
+    }else
+    {
+        if(x>12 && y<13)
+        {
+            printf("e) Esta calculadora no esta preparada para factorear numeros mayores a 12. El factorial de %d es: %d\n",y,resultadoFactorizadoY);
+        }else
+        {
+            if(x<13 && y>12)
+            {
+                printf("e) El factorial de %d es: %d .Esta calculadora no esta preparada para factorear numeros mayores a 12\n",x,resultadoFactorizadoX);
+            }else
+            {
+                if(x>12 && y>12)
+                {
+                    printf("e) Esta calculadora no esta preparada para factorear numeros mayores a 12\n");
+                }
+            }
+        }
+    }
+
 }

@@ -2,45 +2,49 @@
 #include <stdlib.h>
 #include "funcionesDelTP.h"
 
+void mostarMensaje();
+
 int main()
 {
-   /* int primerNum=2;
-    int segundoNum=6;
-    float resultado;
-
-    resultado=dividir(primerNum,segundoNum);
-
-    printf("%f",resultado);*/
     int primerOperando;
     int segundoOperando;
     int opcion;
     int banderaCase1;
     int banderaCase2;
     int banderaCase3;
+    int bandera1Menu;
+    int bandera2Menu;
 
     banderaCase1=0;
     banderaCase2=0;
     banderaCase3=0;
+    bandera1Menu=0;
+    bandera2Menu=0;
+
 
     do
     {
-        printf("1. Ingresar 1er operando (A=x)\n");
-        printf("2. Ingresar 2do operando (B=y)\n");
-        printf("3. Calcular todas las operaciones\n");
-            printf("\ta) Calcular la suma (A+B)\n");
-            printf("\tb) Calcular la resta (A-B)\n");
-            printf("\tc) Calcular la division (A/B)\n");
-            printf("\td) Calcular la multiplicacion (A*B)\n");
-            printf("\te) Calcular el factorial (A!) y (B!)\n");
-        printf("4. Informar resultados\n");
-            /*printf("\ta) El resultado de A+B es: r\n");
-            printf("\tb) El resultado de A-B es: r\n");
-            printf("\tc) El resultado de A/B es: r o No es posible dividir por cero\n");
-            printf("\td) El resultado de A*B es: r \n");
-            printf("\te) El factorial de A es: r1 y El factorial de B es: r2\n");*/
-        printf("5. Salir\n");
 
-        opcion=ingresarOpcion(opcion,"Elija una opcion: ");
+        if(bandera1Menu==0)
+        {
+            printf("1. Ingresar 1er operando (A=x)\n");
+        }else
+        {
+            printf("1. Ingresar 1er operando (A=%d)\n",primerOperando);
+        }
+
+        if(bandera2Menu==0)
+        {
+            printf("2. Ingresar 2do operando (B=y)\n");
+        }else
+        {
+            printf("2. Ingresar 2do operando (B=%d)\n",segundoOperando);
+        }
+                printf("3. Calcular todas las operaciones\n");
+                printf("4. Informar resultados\n");
+                printf("5. Salir\n");
+
+        opcion=ingresarOpcion(opcion,"\nElija una opcion: ");
 
         switch(opcion)
         {
@@ -48,40 +52,77 @@ int main()
 
                 primerOperando=pedidorNumero(primerOperando,"\nIngrese el 1er operando: ");
                 banderaCase1++;
+                bandera1Menu++;
                 break;
 
             case 2:
 
                 segundoOperando=pedidorNumero(segundoOperando,"\nIngrese el 2do operando: ");
                 banderaCase2++;
+                bandera2Menu++;
                 break;
 
             case 3:
                 if(banderaCase1!=0 && banderaCase2!=0)
                 {
                     realizarOpMat(primerOperando,segundoOperando);
-                    banderaCase1--;
-                    banderaCase2--;
                     banderaCase3++;
                 }else
                 {
-                    printf("Error, debe ingresar un valor para cada operando!\t");
+                    if(banderaCase1==0 && banderaCase2==0)
+                    {
+                        printf("Error! Debe ingresar los valores de los operando\n.");
+                    }else
+                    {
+                        if(banderaCase1!=0 && banderaCase2==0)
+                        {
+                            printf("Error Falta ingresarle un valor al 2do operando\n");
+                        }else
+                        {
+                            if(banderaCase1==0 && banderaCase2!=0)
+                            {
+                                printf("Error Falta ingresar un valor para el 1er operando");
+                            }
+                        }
+                    }
+
                 }
                 break;
 
             case 4:
-                if(banderaCase3!=0)
+                if(banderaCase1!=0 && banderaCase2!=0 && banderaCase3!=0)
                 {
                     mostrarResultados(primerOperando,segundoOperando);
                     banderaCase3--;
                 }else
                 {
-                    printf("Error, debe ingresar un valor para cada operando y calcularlos!\t");
+                    if(banderaCase1==0 && banderaCase2==0 && banderaCase3==0)
+                    {
+                        printf("Error! Falta ingresar valores para los operando y calcularlos\n");
+                    }else
+                    {
+                        if(banderaCase1!=0 && banderaCase2==0 && banderaCase3==0)
+                        {
+                            printf("Error Falta ingresarle un valor al 2do operando y calcularlo\n");
+                        }else
+                        {
+                            if(banderaCase1!=0 && banderaCase2!=0 && banderaCase3==0)
+                            {
+                                printf("Error Falta calcular los operando\n");
+                            }else
+                            {
+                                if(banderaCase1==0 && banderaCase2!=0 && banderaCase3==0)
+                                {
+                                    printf("Error Falta ingresarle un al valor 1er operando y calcularlos\n");
+                                }
+                            }
+                        }
+                    }
                 }
                 break;
 
             default:
-                printf("\n salir \n");
+                printf("\nSaliendo de la calculadora...\n");
                 break;
         }
         system("pause");
@@ -90,6 +131,27 @@ int main()
     while(opcion!=5);
     return 0;
 }//Ahora en lo que estoy trabajando es, como hago para que el simbolo de "x" y el de "y", sean representados por un valor numerico en el menu.
+
+/* int primerNum=2;
+    int segundoNum=6;
+    float resultado;
+
+    resultado=dividir(primerNum,segundoNum);
+
+    printf("%f",resultado);*/
+
+/*void mostarMensaje()
+{
+
+    int variableEntera;
+
+    printf("1. Ingresar 1er operando (A=x)\n");
+
+    printf("Ingresar un numero para remplazar en el equivalente de A: ");
+    scanf("%d",&variableEntera);
+
+    printf("1. Ingresar 1er operando (A=%d)\n",variableEntera);
+}*/
 
 
 
